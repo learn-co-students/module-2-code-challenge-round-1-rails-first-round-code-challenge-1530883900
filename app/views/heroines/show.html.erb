@@ -1,0 +1,9 @@
+<h2><%= @heroine.name %></h2>
+
+<h4>a.k.a.</h4>
+
+<h2><%= @heroine.super_name %></h2>
+
+<h4>Superpower: <%= link_to @heroine.power.name, @heroine.power %></h4>
+
+<%= link_to "Back to Index", heroines_path %>

@@ -1,0 +1,18 @@
+<h2>Create Your Own Hero!</h2>
+
+<%# if flash[:notice] %>
+  <h4><%# flash[:notice] %></h4>
+<%# end %>
+
+<%= form_for @heroine do |f| %>
+  <%= f.label :name  %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :super_name  %>
+  <%= f.text_field :super_name %>
+  <br>
+  <%= f.collection_select :power_id, @powers, :id, :name, {prompt: "Select a Superpower"} %>
+  <br>
+  <%= f.submit  %>
+
+<% end %>
