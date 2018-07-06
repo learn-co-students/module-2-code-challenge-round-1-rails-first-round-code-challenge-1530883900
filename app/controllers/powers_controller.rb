@@ -4,6 +4,9 @@ class PowersController < ApplicationController
     @powers = Power.all
   end
 
+  def show
+  end
+
   private
   def fetch_power
     @power = Power.find(params[:id])
