@@ -1,9 +1,23 @@
-<h2>All Heroines</h2>
+<h2 align="center"><%= link_to "All Heroines", heroines_path %></h2>
+
+<hr>
+<%= link_to "See all the Powers!", powers_path %>
+<hr>
+<%= button_to "Create new heroine!", new_heroine_path, method: :get %>
+<hr>
+<h3>Search by Power</h3>
+
+<%= form_with url: heroines_path, method: :get, local:true do |f| %>
+<%= f.text_field :search, placeholder: "Find a Hero by Power" %>
+<%= f.submit "Search!" %>
+<% end %>
+
+<hr>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%=link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
