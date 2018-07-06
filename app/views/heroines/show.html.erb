@@ -1,0 +1,7 @@
+<h2> <%= @heroine.name %>'s Page </h2>
+
+Real Name: <%= @heroine.name %> <br>
+Super Name: <%= @heroine.super_name %> <br>
+Super Power: <%= link_to @heroine.power.name, @heroine.power %>
+
+<%= button_to "delete this Heroine", @heroine, method: 'delete' %>
