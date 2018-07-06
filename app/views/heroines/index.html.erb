@@ -2,7 +2,14 @@
 <h2>All Heroines</h2>
 <hr>
 <%= link_to "Create New Heroine", new_heroine_path %><br>
-<%= collection_select :heroine, :power_id, Power.all, :id, :name %>
+
+
+<!-- <%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+<%= collection_select :heroine, :power_id, Power.all, :id, :name %> -->
 
 <ul>
   <% @heroines.each do |heroine| %>
