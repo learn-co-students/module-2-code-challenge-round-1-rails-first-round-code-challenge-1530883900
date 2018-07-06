@@ -1,9 +1,27 @@
 <h2>All Heroines</h2>
+<div>
+<%= link_to "All Superpowers", powers_path %>
+</div>
+<br>
+<div>
+  <%= button_to "Create Your Own Heroine!", new_heroine_path, method: 'get' %>
+</div>
+<br>
+<div >
+
+  <%= form_with url: heroines_path, method: 'get' do |f| %>
+    <%= f.label :q, "Search by Power:" %>
+    <%= f.text_field :q %>
+    <%= f.submit "Search", name: params[:q] %>
+  <% end %>
+</div>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
+       -
+      <%= link_to heroine.power.name, heroine.power %>
     </li>
     <br>
   <% end %>
