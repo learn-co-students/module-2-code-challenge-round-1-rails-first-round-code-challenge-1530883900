@@ -1,6 +1,7 @@
 class Heroine < ApplicationRecord
   belongs_to :power
-  validates :name, uniqueness:true
+  validates :name, uniqueness:true, presence:true
+  validates :super_name, presence:true
   #has_one :power
 
   def self.search(search_term)
