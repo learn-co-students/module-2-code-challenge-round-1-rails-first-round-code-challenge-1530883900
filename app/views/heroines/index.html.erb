@@ -1,9 +1,13 @@
 <h2>All Heroines</h2>
+<hr><hr>
+<%= button_to "Create a New Heroine", new_heroine_path, method: "get" %>
+<%= button_to "All Powers", powers_path, method: "get" %>
+<hr>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
