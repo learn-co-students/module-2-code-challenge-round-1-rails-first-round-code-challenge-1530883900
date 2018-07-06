@@ -1,0 +1,21 @@
+<h1>THE POWER IS YOURS</h1>
+
+<hr>
+<%= link_to "See all Powers", powers_path %>
+<hr>
+
+<h3><%= @power.name %></h3>
+
+<p>Description: <%= @power.description %></p>
+
+<hr>
+
+<% @power.heroines.each do |heroine| %>
+<p><%= link_to heroine.name, heroine_path(heroine) %> aka <%= heroine.super_name %> has this ability!</p>
+<% end %>
+
+<hr>
+
+<%= button_to "Edit this Power!", edit_power_path(@power), method: :get %>
+<hr>
+<%= button_to "Delete this Power!", power_path(@power), method: :delete %>

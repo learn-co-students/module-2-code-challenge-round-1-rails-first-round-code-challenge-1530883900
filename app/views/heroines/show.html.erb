@@ -1,0 +1,15 @@
+<h1>Marvel NOW! Bio</h1>
+
+<hr>
+
+<%= link_to "Back to Heroines", heroines_path %>
+
+<hr>
+
+<h3><%= @heroine.name %> has the power of <%= link_to @heroine.power.name, power_path(@heroine.power) %>!</h3>
+
+<hr>
+
+<%= button_to "Edit this Heroine!", edit_heroine_path(@heroine), method: :get %>
+<hr>
+<%= button_to "Remove Heroine from your Database", heroine_path(@heroine), method: :delete %>

@@ -1,9 +1,15 @@
 <h2>All Heroines</h2>
 
+<hr>
+<%= link_to "See all the Powers!", powers_path %>
+<hr>
+<%= button_to "Create new heroine!", new_heroine_path, method: :get %>
+<hr>
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%=link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>

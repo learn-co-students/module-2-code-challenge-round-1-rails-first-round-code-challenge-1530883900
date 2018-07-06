@@ -1,0 +1,12 @@
+<h1>Update the Power!</h1>
+
+<fieldset>
+  <legend>Name and Describe the Power</legend>
+  <%= form_with model: @power do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %> <br>
+  <%= f.label :description%>
+  <%= f.text_area :description %>
+  <%= f.submit %>
+  <% end %>
+</fieldset>
