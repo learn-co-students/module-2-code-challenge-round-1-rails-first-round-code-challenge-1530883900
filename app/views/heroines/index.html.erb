@@ -1,10 +1,30 @@
 <h2>All Heroines</h2>
 
+<%= form_tag(heroines_path, :method => "get", id: "search-form") do %>
+    <strong>Search by Superpower: </strong>
+    <br>
+    <br>
+    <%= text_field_tag :search, params[:search], placeholder: "Enter a Superpower" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<br>
+Please enter one of the following powers:
+<ul>
+  <% @powers.each do |power| %>
+  <li><%= power.name %></li>
+  <% end %>
+</ul>
+<button><%= link_to "Refresh All Heroines", heroines_path %></button>
+
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<button><%= link_to "Create a New Heroine", new_heroine_path %></button>
+<button><%= link_to "All Powers", powers_path %></button>

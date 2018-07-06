@@ -1,0 +1,22 @@
+<h1>Create a New Heroine!</h1>
+<% if @heroine.errors.any? %>
+<% @heroine.errors.each do |attribute, message| %>
+<h3>This Super Name <%= message %>.</h3>
+<% end %>
+<% end %>
+<%= form_for(@heroine) do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.label :super_name %>
+<%= f.text_field :super_name %>
+<br>
+<%= f.label :power %>
+<%= f.collection_select :power_id, @powers, :id, :name %>
+<br>
+<%= f.submit %>
+<% end %>
+<br>
+<br>
+<button><%= link_to "All Heroines", heroines_path %></button>
+<button><%= link_to "All Powers", powers_path %></button>
