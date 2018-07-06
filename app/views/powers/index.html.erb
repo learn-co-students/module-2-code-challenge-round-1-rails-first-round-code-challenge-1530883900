@@ -1,6 +1,6 @@
-<h2>All Superpowers</h2>
+<center><h2>All Superpowers</h2></center>
 
-<ul>
+<ol>
   <% @powers.each do |power| %>
     <li>
       <%= power.name %>
@@ -9,4 +9,6 @@
     </li>
     <br>
   <% end %>
-</ul>
+</ol>
+
+<%= link_to "Create A Superpower!", new_power_path %>
