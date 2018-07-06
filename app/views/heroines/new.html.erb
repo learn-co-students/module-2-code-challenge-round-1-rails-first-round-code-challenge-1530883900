@@ -1,4 +1,9 @@
 <h1>Create a New Heroine!</h1>
+<% if @heroine.errors.any? %>
+<% @heroine.errors.each do |attribute, message| %>
+<h3>This Super Name <%= message %>.</h3>
+<% end %>
+<% end %>
 <%= form_for(@heroine) do |f| %>
 <%= f.label :name %>
 <%= f.text_field :name %>
