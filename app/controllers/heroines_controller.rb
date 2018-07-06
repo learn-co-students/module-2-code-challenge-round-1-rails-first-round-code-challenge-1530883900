@@ -2,8 +2,12 @@ class HeroinesController < ApplicationController
   before_action :get_heroine, only: :show
 
   def index
-    @heroines = Heroine.all
-    @powers = Power.all
+
+    if params[:power]
+      @power = Power.where('name like ?', "%#{params[:power]}").first
+    else
+      @heroines = Heroine.all
+    end
   end
 
   def show
@@ -31,7 +35,7 @@ class HeroinesController < ApplicationController
   end
 
   def heroine_params
-    params.require(:heroine).permit(:name, :super_name, :power_id)
+    params.require(:heroine).permit(:name, :super_name, :power_id, :power)
   end
 
 end
