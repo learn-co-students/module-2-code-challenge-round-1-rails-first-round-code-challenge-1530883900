@@ -1,6 +1,6 @@
 class HeroinesController < ApplicationController
   before_action :set_heroine, only: [:show, :edit, :update, :delete]
-  before_action :all_powers, only: [:new, :create]
+  before_action :all_powers, only: [:index, :new, :create]
 
   def index
     @heroines = Heroine.all

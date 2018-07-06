@@ -8,6 +8,12 @@
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 <br>
+Please enter one of the following powers:
+<ul>
+  <% @powers.each do |power| %>
+  <li><%= power.name %></li>
+  <% end %>
+</ul>
 <button><%= link_to "Refresh All Heroines", heroines_path %></button>
 
 
