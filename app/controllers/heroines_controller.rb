@@ -1,6 +1,12 @@
 class HeroinesController < ApplicationController
   def index
     @heroines = Heroine.all
+    if params[:search]
+      @heroines = Heroine.select {|heroine| heroine.power.name == params[:search].downcase}
+    else
+      @heroines = Heroine.all
+    end
+
   end
 
   def new
