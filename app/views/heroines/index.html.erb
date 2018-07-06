@@ -7,6 +7,8 @@
     <%= text_field_tag :search, params[:search], placeholder: "Enter a Superpower" %>
     <%= submit_tag "Search", :name => nil %>
 <% end %>
+<br>
+<button><%= link_to "Refresh All Heroines", heroines_path %></button>
 
 
 <ul>
@@ -19,5 +21,4 @@
 </ul>
 
 <button><%= link_to "Create a New Heroine", new_heroine_path %></button>
-<button><%= link_to "All Heroines", heroines_path %></button>
 <button><%= link_to "All Powers", powers_path %></button>
