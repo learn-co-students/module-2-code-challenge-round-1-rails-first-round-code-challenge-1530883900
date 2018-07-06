@@ -1,9 +1,20 @@
-<h2>All Heroines</h2>
+<h1>Index of all Heroines</h1>
+
+<br>
+<button><%= link_to "Create new heroine", new_heroine_path %></button>
+<br>
+<br>
+<h2>Search by Superpower:</h2>
+
+<%= form_tag(heroines_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Heroines by Powers" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
