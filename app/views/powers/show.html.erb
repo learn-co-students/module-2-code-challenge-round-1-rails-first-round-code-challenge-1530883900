@@ -1,0 +1,8 @@
+<h1>Show Page for <%= @power.name %>!!!</h1>
+<h2>Power Name: <%= @power.name %></h2>
+<h3>Description:</h3>
+<p><%=@power.description%></p>
+
+<button><%= link_to "All Powers", powers_path %></button>
+<button><%= link_to "All Heroines", heroines_path %></button>
+<button><%= link_to "Create a Heroine", new_heroine_path %></button>
