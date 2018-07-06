@@ -1,0 +1,17 @@
+<hr>
+<h2> <%= @power.name %>'s Page </h2>
+<hr>
+
+<h3> <%= link_to "Return to All Powers", powers_path %> </h3>
+<br>
+<br>
+
+Name: <%= @power.name %> <br>
+Description: <%= @power.description %> <br>
+<br>
+Heroines with this Power:
+<ul>
+<% @power.heroines.each do |heroine|  %>
+  <%= link_to heroine.name, heroine %> <br>
+<% end %>
+</ul>

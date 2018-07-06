@@ -1,9 +1,14 @@
+<hr>
 <h2>All Heroines</h2>
+<hr>
+<%= link_to "Create New Heroine", new_heroine_path %><br>
+<%= collection_select :heroine, :power_id, Power.all, :id, :name %>
 
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= heroine.name %> AKA
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
